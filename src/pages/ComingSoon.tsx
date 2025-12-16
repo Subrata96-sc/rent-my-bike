@@ -87,7 +87,7 @@ const ComingSoon: React.FC = () => {
       >
         {/* Logo */}
         <Box mb={3}>
-          <img src="/images/logo.jpeg" alt="logo" height={60} />
+          <img src="/images/logo.png" alt="logo" height={60} />
         </Box>
 
         {/* Heading */}
@@ -102,11 +102,11 @@ const ComingSoon: React.FC = () => {
           COMING SOON
         </Typography>
 
-        <Typography fontWeight={600} mb={1}>
+        <Typography fontWeight={600} mb={1} fontSize={24}>
           Our website is currently undergoing scheduled maintenance.
         </Typography>
 
-        <Typography mb={4}>
+        <Typography mb={4} fontSize={19}>
           We’ll be back shortly! Sign up now to receive early notifications of
           our launch date.
         </Typography>
