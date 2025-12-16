@@ -5,8 +5,9 @@ import {
   Typography,
   TextField,
   Button,
-  Grid,
+  Stack,
 } from "@mui/material";
+
 import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import VerifiedIcon from "@mui/icons-material/Verified";
@@ -21,12 +22,7 @@ const IconCircle = ({
   text: string;
   icon: React.ReactNode;
 }) => (
-  <Box
-    textAlign="center"
-    sx={{
-      width: { xs: "100%", sm: 160 },
-    }}
-  >
+  <Box textAlign="center" sx={{ width: 160 }}>
     <Box
       sx={{
         width: 90,
@@ -65,10 +61,10 @@ const ComingSoon: React.FC = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        position: "relative",
         backgroundImage: "url('/images/coming-soon-bg.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
+        position: "relative",
         "&::before": {
           content: '""',
           position: "absolute",
@@ -116,16 +112,11 @@ const ComingSoon: React.FC = () => {
         </Typography>
 
         {/* Email Form */}
-        <Box
-          component="form"
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            alignItems: "center",
-            justifyContent: "center",
-            gap: { xs: 2, sm: 0 },
-            mb: 6,
-          }}
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          justifyContent="center"
+          spacing={0}
+          mb={6}
         >
           <TextField
             placeholder="Enter your email address"
@@ -141,11 +132,9 @@ const ComingSoon: React.FC = () => {
           />
 
           <Button
-            type="submit"
             variant="contained"
             sx={{
               height: 51,
-              width: { xs: "100%", sm: "auto" },
               borderRadius: { xs: 1, sm: "0 8px 8px 0" },
               backgroundColor: "#2e7d32",
               px: 4,
@@ -155,46 +144,47 @@ const ComingSoon: React.FC = () => {
           >
             Notify me
           </Button>
-        </Box>
+        </Stack>
 
         {/* Steps */}
-        <Grid
-          container
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
           justifyContent="center"
           alignItems="center"
-          spacing={2}
+          spacing={3}
         >
-          {[
-            { text: "Visit Website", icon: <LanguageIcon fontSize="large" /> },
-            {
-              text: "Search for desired Bike and book",
-              icon: <SearchIcon fontSize="large" />,
-            },
-            { text: "Verify your profile", icon: <VerifiedIcon fontSize="large" /> },
-          ].map((step, index) => (
-            <Grid item xs={12} sm="auto" key={index}>
-              <Box display="flex" alignItems="center" gap={2}>
-                <IconCircle text={step.text} icon={step.icon} />
-                <ArrowForwardIcon
-                  sx={{
-                    display: { xs: "none", sm: "block" },
-                    color: "#2e7d32",
-                    fontSize: 20,
-                    position: "relative",
-                    top: -15,
-                  }}
-                />
-              </Box>
-            </Grid>
-          ))}
-
-          <Grid item xs={12} sm="auto">
-            <IconCircle
-              text="Get ready for your trip"
-              icon={<DirectionsBikeIcon fontSize="large" />}
+          <Stack direction="row" alignItems="center" spacing={2}>
+            <IconCircle text="Visit Website" icon={<LanguageIcon fontSize="large" />} />
+            <ArrowForwardIcon
+              sx={{ color: "#2e7d32", fontSize: 20,   transform: "translateY(-14px)", display: { xs: "none", sm: "block" } }}
             />
-          </Grid>
-        </Grid>
+          </Stack>
+
+          <Stack direction="row" alignItems="center" spacing={2}>
+            <IconCircle
+              text="Search for desired Bike and book"
+              icon={<SearchIcon fontSize="large" />}
+            />
+            <ArrowForwardIcon
+              sx={{ color: "#2e7d32", fontSize: 20,   transform: "translateY(-14px)", display: { xs: "none", sm: "block" } }}
+            />
+          </Stack>
+
+          <Stack direction="row" alignItems="center" spacing={2}>
+            <IconCircle
+              text="Verify your profile"
+              icon={<VerifiedIcon fontSize="large" />}
+            />
+            <ArrowForwardIcon
+              sx={{ color: "#2e7d32", fontSize: 20,  transform: "translateY(-14px)", display: { xs: "none", sm: "block" } }}
+            />
+          </Stack>
+
+          <IconCircle
+            text="Get ready for your trip"
+            icon={<DirectionsBikeIcon fontSize="large" />}
+          />
+        </Stack>
       </Paper>
     </Box>
   );
