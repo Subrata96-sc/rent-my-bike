@@ -1,11 +1,12 @@
-import React from "react";
-import ComingSoon from "./pages/ComingSoon";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes/AppRoutes";
 
-
-const App: React.FC = () => {
+function App() {
   return (
-    <ComingSoon />
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
-};
+}
 
 export default App;
