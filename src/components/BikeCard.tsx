@@ -24,7 +24,7 @@ const BikeCard = ({ city }: BikeCardProps) => {
       {/* Bike Image */}
       <Box
         component="img"
-        src="/images/bike.jpg"
+        src="/images/icons/product.png"
         alt="Bike"
         sx={{
           width: "100%",

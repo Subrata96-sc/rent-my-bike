@@ -25,7 +25,7 @@ const Footer = () => {
           <Stack spacing={1} maxWidth={360}>
             <Box>
               <img
-                src="/images/logo.png"
+                src="/images/icons/logo_footer.png"
                 alt="RentMyBike"
                 style={{ height: 50, width: "auto" }}
               />

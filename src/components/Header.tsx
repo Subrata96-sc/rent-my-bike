@@ -20,7 +20,7 @@ const Header = () => {
         {/* Logo - Left */}
         <Box display="flex" alignItems="center">
           <img
-            src="/images/logo.png"
+            src="/images/icons/logo_main.png"
             alt="logo"
             style={{
               height: 48,
